@@ -28,3 +28,10 @@ O projeto utiliza Selenium WebDriver para controlar o navegador Chrome e interag
 ## Contribuição
 
 O projeto não permite contribuições no momento, estou em aprendizado e aplicando melhorias.
+
+## Banco de dados
+
+Segue imagem do script de cração da tabela e uma consulta com os dados salvos:
+
+![image](https://github.com/nybersa/Desafio.RPA.2024/assets/159395867/8d89911d-4ad1-4500-be46-cd0ade67270a)
+
