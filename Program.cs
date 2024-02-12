@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -53,9 +53,7 @@ namespace RPA.DesafioTecnico
             //ação sobre os spans-cada palavra
             int index = 0;
             while (index < spans.Count && !string.IsNullOrEmpty(spans[index].Text))
-            //foreach (IWebElement span in spans)
             {
-                //string textoDoSpan = span.Text;
                 string textoDoSpan = spans[index].Text;
 
                 foreach (char c in textoDoSpan)
@@ -63,8 +61,7 @@ namespace RPA.DesafioTecnico
                     ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].value += arguments[1];", divDestino, c.ToString());
                     await Task.Delay(100);
                 }
-
-                //if (!span.Equals(spans.Last()))
+                // valida o tempo do contador para seguir
                 if (index < spans.Count -1)
                 {
                     new Actions(driver).SendKeys(divDestino, Keys.Space).Build().Perform();
@@ -80,7 +77,6 @@ namespace RPA.DesafioTecnico
 
             // pega o resultado
 
-            //IWebElement linhappm = driver.FindElement(By.Id("wpm"));
             IWebElement linhappm = driver.FindElement(By.XPath("//table[@id='result-table']//td[@id='wpm']/strong"));
             IWebElement linhatecladototal = driver.FindElement(By.Id("keystrokes"));
             IWebElement linhaprecisao = driver.FindElement(By.Id("correct"));
@@ -121,7 +117,7 @@ namespace RPA.DesafioTecnico
             }
             finally
             {
-                driver.Quit(); // Certifique-se de fechar o navegador após o uso
+                driver.Quit(); // Fecha navegador após o uso
             }
         }
     }
